@@ -12,6 +12,7 @@
     int TopRow6 = -1, TopColumn6 = -1, up3 = -1, down3 = -1; 
 
     void FillTiles(int[][10]);
+    int SelectPlayers();
     void SnakesLadders(int[][10]);
     void PrintBoard(int[][10]);
     int WithinBoard(int, int, int, int);
@@ -24,14 +25,15 @@
     void purple();
     void brown();
     void resetColor();
-    void GameLoop(int[][10]);
+    void GameLoop(int[][10], int);
     int turn(int);
     int DiceRoll();
 
     int main(){
         int tile[10][10];     // Initializing variables 
+        int NumPlayers = SelectPlayers();
         FillTiles(tile);
-        GameLoop(tile);
+        GameLoop(tile, NumPlayers);
         return 0;
     }
 
@@ -51,6 +53,18 @@
                 RowCount++; 
             }
         }
+    }
+
+    int SelectPlayers(){
+        int NumPlayers;
+        printf("Enter number of players (2-4): ");
+        scanf("%d", &NumPlayers);
+        while (NumPlayers > 4 || NumPlayers < 2){
+            printf("Invalid input, please enter a number from 2-4.\n");
+            printf("Enter number of players (2-4): ");
+            scanf("%d", &NumPlayers);
+        }
+        return NumPlayers;
     }
 
     void SnakesLadders(int tile[][10]){
@@ -251,7 +265,7 @@
         printf("\033[0m");
     }
 
-    void GameLoop(int tile[][10]){
+    void GameLoop(int tile[][10], int NumPlayers){
         int win = 0;
         while(!win){
             SnakesLadders(tile);
@@ -261,12 +275,16 @@
             PrintBoard(tile);
             printf("Player 2's turn\n");
             pos2 = turn(pos2);
-            PrintBoard(tile);
-            printf("Player 3's turn\n"); 
-            pos3 = turn(pos3);
-            PrintBoard(tile);
-            printf("Player 4's turn\n"); 
-            pos4 = turn(pos4);
+            if(NumPlayers >= 3){
+                PrintBoard(tile);
+                printf("Player 3's turn\n"); 
+                pos3 = turn(pos3);
+                if(NumPlayers == 4){
+                    PrintBoard(tile);
+                    printf("Player 4's turn\n"); 
+                    pos4 = turn(pos4);
+                }  
+            }
             if(pos1 == 100){
                 printf("\nPlayer 1 wins!\n");
                 win = 1;
@@ -289,6 +307,7 @@
     int turn(int pos){
         int roll;
         printf("\nPress enter to roll the dice: ");
+            fflush(stdin);
             getchar();
             roll = DiceRoll();
             pos += roll;
