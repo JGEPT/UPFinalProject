@@ -321,7 +321,7 @@
         srand(time(NULL));
         for (int i = 0; i < 20; i++) {  
             dice = (rand() % 6) + 1;
-            printf("\r%i", dice);  
+            printf("\r%d", dice);  
             usleep(45000);
         }
         return dice;
