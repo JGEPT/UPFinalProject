@@ -21,6 +21,8 @@
     void yellow();
     void blue();
     void green();
+    void purple();
+    void brown();
     void resetColor();
     void GameLoop(int[][10]);
     int turn(int);
@@ -136,7 +138,7 @@
         for(int i = 0; i<=9; i++){
             for(int j = 0; j<=9; j++){
                 if(tile[i][j] == pos1){
-                    red();
+                    brown();
                     printf("P1  ");
                     resetColor();
                 }
@@ -146,7 +148,7 @@
                     resetColor();
                 }
                 else if(tile[i][j] == pos3){
-                    yellow();
+                    purple();
                     printf("P3  ");
                     resetColor();
                 }
@@ -227,7 +229,7 @@
     }
 
     void yellow() {
-        printf("\033[0;33m");
+        printf("\033[1;33m");
     }
 
     void green() {
@@ -235,7 +237,14 @@
     }
 
     void blue() {
-        printf("\033[0;34m");
+        printf("\033[1;34m");
+    }
+    void purple() {
+        printf("\033[1;35m");
+    }
+
+    void brown() {
+        printf("\033[1;38;2;150;75;0m");
     }
 
     void resetColor() {
@@ -258,7 +267,6 @@
             PrintBoard(tile);
             printf("Player 4's turn\n"); 
             pos4 = turn(pos4);
-            PrintBoard(tile);
             if(pos1 == 100){
                 printf("\nPlayer 1 wins!\n");
                 win = 1;
