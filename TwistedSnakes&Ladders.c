@@ -115,7 +115,7 @@ RETURNS		: None
              (head1 == head3 || head1 == tail3 || tail1 == head3 || tail1 == tail3) ||
              (head1 == up1 || head1 == down1 || tail1 == up1 || tail1 == down1) || 
              (head1 == up2 || head1 == down2 || tail1 == up2 || tail1 == down2) || 
-             (head1 == up3 || head1 == down3 || tail1 == up3 || tail1 == down3)); 
+             (head1 == up3 || head1 == down3 || tail1 == up3 || tail1 == down3))); 
 
         // Second head and tail
         do {
@@ -128,7 +128,7 @@ RETURNS		: None
              (head2 == head3 || head2 == tail3 || tail2 == head3 || tail2 == tail3) ||
              (head2 == up1 || head2 == down1 || tail2 == up1 || tail2 == down1) || 
              (head2 == up2 || head2 == down2 || tail2 == up2 || tail2 == down2) || 
-             (head2 == up3 || head2 == down3 || tail2 == up3 || tail2 == down3));
+             (head2 == up3 || head2 == down3 || tail2 == up3 || tail2 == down3)));
 
         // Third head and tail
         do {
@@ -141,7 +141,7 @@ RETURNS		: None
              (head3 == head2 || head3 == tail2 || tail3 == head2 || tail3 == tail2) ||
              (head3 == up1 || head3 == down1 || tail3 == up1 || tail3 == down1) || 
              (head3 == up2 || head3 == down2 || tail3 == up2 || tail3 == down2) || 
-             (head3 == up3 || head3 == down3 || tail3 == up3 || tail3 == down3)); 
+             (head3 == up3 || head3 == down3 || tail3 == up3 || tail3 == down3))); 
 
         // First ladder
         do {
@@ -154,7 +154,7 @@ RETURNS		: None
              (up1 == head2 || up1 == tail2 || down1 == head2 || down1 == tail2) ||
              (up1 == head3 || up1 == tail3 || down1 == head3 || down1 == tail3) ||
              (up1 == up2 || up1 == down2 || down1 == up2 || down1 == down2) ||  
-             (up1 == up3 || up1 == down3 || down1 == up3 || down1 == down3));  
+             (up1 == up3 || up1 == down3 || down1 == up3 || down1 == down3)));  
 
         // Second ladder
         do {
@@ -167,7 +167,7 @@ RETURNS		: None
              (up2 == head2 || up2 == tail2 || down2 == head2 || down2 == tail2) ||
              (up2 == head3 || up2 == tail3 || down2 == head3 || down2 == tail3) ||
              (up2 == up1 || up2 == down1 || down2 == up1 || down2 == down1) ||  
-             (up2 == up3 || up2 == down3 || down2 == up3 || down2 == down3));   
+             (up2 == up3 || up2 == down3 || down2 == up3 || down2 == down3)));   
 
         // Third ladder
         do {
@@ -180,7 +180,7 @@ RETURNS		: None
              (up3 == head2 || up3 == tail2 || down3 == head2 || down3 == tail2) ||
              (up3 == head3 || up3 == tail3 || down3 == head3 || down3 == tail3) ||
              (up3 == up1 || up3 == down1 || down3 == up1 || down3 == down1) ||  
-             (up3 == up2 || up3 == down2 || down3 == up2 || down3 == down2));
+             (up3 == up2 || up3 == down2 || down3 == up2 || down3 == down2)));
     }
 /*
 =========================================================================================================================
